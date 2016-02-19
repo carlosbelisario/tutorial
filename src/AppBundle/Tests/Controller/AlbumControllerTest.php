@@ -44,6 +44,11 @@ class AlbumControllerTest extends WebTestCase
         );
 
         $this->assertContains('Albums', $crawler->filter('#container h1')->text());
+
+        $this->assertGreaterThan(
+            0,
+            $crawler->filter('.album')->count()
+        );
     }
 
     /**
