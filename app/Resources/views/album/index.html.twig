@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Albums</h1>
+    <ul>
+        {% if albums | length == 0 %}
+            <p>No hay album registrado</p>
+        {% else %}
+            {% for album in albums %}
+                <li>{{ album.titulo }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+{% endblock %}
